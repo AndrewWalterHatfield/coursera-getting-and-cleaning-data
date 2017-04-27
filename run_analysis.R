@@ -42,7 +42,7 @@ setActNames <- merge(MeanStd, activityLabels,
                               by='activityId',
                               all.x=TRUE)
 
-secTidySet <- aggregate(. ~subjectId + activityType, setActNames, mean)
-secTidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityType),]
+Tidydata <- aggregate(. ~subjectId + activityType, setActNames, mean)
+Tidydata <- Tidydata[order(Tidydata$subjectId, Tidydata$activityType),]
 
-write.table(secTidySet, "secTidySet.txt", row.name=FALSE)
+write.table(Tidydata, "Tidydata.txt", row.name=FALSE)
